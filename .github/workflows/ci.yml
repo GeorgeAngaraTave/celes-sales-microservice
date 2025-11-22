@@ -31,6 +31,9 @@ jobs:
           echo "Using flake8 config:"
           cat .flake8
           flake8 --config=.flake8 .
+          
+      - name: Create empty datamart folder
+        run: mkdir -p data    
 
   tests:
     name: Unit tests (pytest)
