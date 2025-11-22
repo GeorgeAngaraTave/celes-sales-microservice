@@ -27,7 +27,10 @@ jobs:
           pip install flake8
 
       - name: Lint with flake8
-        run: flake8 --config=.flake8
+        run: |
+          echo "Using flake8 config:"
+          cat .flake8
+          flake8 --config=.flake8 .
 
   tests:
     name: Unit tests (pytest)
