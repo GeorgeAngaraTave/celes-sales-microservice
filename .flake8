@@ -1,3 +1,14 @@
 [flake8]
-max-line-length = 120
-ignore = E501, W292
+max-line-length = 200
+ignore =
+    E501,  # line too long
+    W292,  # no newline at end of file
+    E302,  # expected 2 blank lines
+    F401,  # imported but unused
+    W291,  # trailing whitespace
+    E222   # multiple spaces after operator
+exclude =
+    .git,
+    __pycache__,
+    venv,
+    .venv
