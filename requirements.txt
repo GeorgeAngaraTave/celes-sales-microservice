@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+pandas
+pyarrow
+python-jose[cryptography]
+python-multipart
+pydantic<2.0.0
+pydantic[email]
+python-dotenv
+pytest
+httpx
+flake8
+firebase-admin
