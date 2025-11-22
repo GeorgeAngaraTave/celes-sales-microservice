@@ -8,6 +8,7 @@ app = FastAPI(
     description="Microservicio para la prueba técnica de Celes usando FastAPI, JWT y Parquet.",
 )
 
+
 # Ruta pública, no requiere autenticación
 @app.get("/")
 async def read_root():

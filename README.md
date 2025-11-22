@@ -244,12 +244,24 @@ Incluye:
 
 ---
 
-## 🔄 9. CI / GitHub Actions
+## 🔄 9. CI/CD – GitHub Actions
 
 `ci.yml` ejecuta:
-1. Instalación de dependencias  
-2. Linter (flake8)  
-3. Pruebas (pytest)
+Se configuró un flujo de CI/CD en `.github/workflows/ci.yml` que cumple:
+
+1. **Análisis de código (Lint)**  
+   - Job `lint`  
+   - Instala dependencias y ejecuta `flake8` sobre `app/` y `tests/`.
+
+2. **Pruebas unitarias**  
+   - Job `tests`  
+   - Ejecuta `pytest` con un datamart simulado para no depender de archivos Parquet reales.
+
+3. **Despliegue automatizado a entorno de pruebas**  
+   - Job `deploy` (solo en branch `main` y si los tests pasan).  
+   - Construye una imagen Docker `celes-sales-microservice:staging` y levanta un contenedor de forma efímera como entorno de pruebas.
+
+Este flujo asegura calidad del código y permite validar que el microservicio se construye y arranca correctamente en un entorno similar a producción.
 
 ---
 
